@@ -81,7 +81,36 @@ public class listaEstatica implements listavel{
     @Override
     public Object apagar(int indice) {
         Object auxr = null;
-        if (!estaVazia()){
+        int x, y;
+        if (!estaVazia()) {
+           if (indice > 0 && indice <= quantidade){
+                auxr = dados[mapeamento(indice)];
+                x = mapeamento(indice);
+            if (mapeamento(indice) < (quantidade / 2)) {
+                y = retroceder(x);
+                for (int i = 0; i < indice - 1; i++){
+                    dados[x] = dados[y];
+                    x = retroceder(x);
+                    y = retroceder(y);
+                    ponteiroinicio++;
+                }
+            } else {
+                y = avancar(x);
+                for (int i = 0; i < quantidade - indice; i++){
+                    dados[y] = dados[x];
+                    x = avancar(x);
+                    y = avancar(y);
+                    ponteiroFinal--;
+                }
+            }
+            quantidade--;
+           } else{
+               System.err.println("Indice invalido");
+           }
+        } else {
+            System.err.println("Lista vazia");
+        }
+        /*if (!estaVazia()){
             if (indice > 0 && indice <= quantidade) {
                 auxr = dados[mapeamento(indice)];
                 int x = mapeamento(indice);
@@ -96,6 +125,7 @@ public class listaEstatica implements listavel{
                 ponteiroFinal = retroceder(ponteiroFinal);
             }
         }
+        return auxr;*/
         return auxr;
     }
 
@@ -121,16 +151,36 @@ public class listaEstatica implements listavel{
 
     @Override
     public boolean contem(Object dado) {
-        return false;
+       boolean auxr = false;
+        if (!estaVazia()){
+            for (int i = ponteiroinicio; i < quantidade + ponteiroinicio; i++) {
+                if (dados[i]==dado){
+                auxr = true;
+                break;
+                }
+            }
+        } else {
+            System.err.println("Lista vazia");
+        }
+        return auxr;
     }
 
     public int primeiraOcorrencia (Object dado){
+        int  ponteiroLocal = -1;
         if (!estaVazia()){
             for (int i = ponteiroinicio; i < quantidade + ponteiroinicio; i++){
-
-
+                if (dados[i]==dado) {
+                    ponteiroLocal = i - ponteiroinicio;
+                    break;
+                }
             }
+            if (ponteiroLocal==-1){
+                System.out.println("Este dado não está contido na lista");
+            }
+        } else {
+            System.err.println("Lista vazia");
         }
+        return ponteiroLocal;
 
     }
 
@@ -181,7 +231,7 @@ public class listaEstatica implements listavel{
     }
 
     boolean comparador (Object dado){
-
+        return  false;
     }
 
     int retroceder(int indice){
