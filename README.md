@@ -9,7 +9,7 @@ Este repositório contém as atividades, implementações e projetos desenvolvid
 
 ## 📚 Atividades desenvolvidas
 
-- Estrutura de pilha, filha e lista
+- Estrutura de pilha, fila e lista
           
 ## 📚 Informações Acadêmicas
 
