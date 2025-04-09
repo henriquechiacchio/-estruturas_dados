@@ -13,9 +13,32 @@ public class listaEstatica implements listavel{
     @Override
     public void inserir(Object dado, int indice){
         if (!estaCheia()) {
-            if (indice >= 0 && indice <= quantidade) {
+            if (indice > 0 && indice <= quantidade+1) {
+                int x, y;
+                if (mapeamento(indice)<(quantidade/2)){
+                    x = ponteiroinicio;
+                    y = retroceder(x);
+                    for (int i = 0; i < indice ; i++){
+                        dados[y] = dados[x];
+                        x = avancar(x);
+                        y = avancar(y);
 
+                    }
+                } else {
+                    x = ponteiroFinal;
+                    y = avancar(x);
+                    for (int i = 0; i < indice-1; i++) {
+                        dados[y] = dados[x];
+                        x = retroceder(x);
+                        y = retroceder(y);
+                    }
+                }
+
+            } else {
+                System.err.println("Indice invslido");
             }
+        } else {
+            System.err.println("Indice invalido");
         }
 
     }
@@ -36,7 +59,7 @@ public class listaEstatica implements listavel{
     public Object selecionar(int indice) {
         Object auxr = null;
         if (!estaVazia()) {
-            if (indice > 0 && indice <= quantidade) {
+            if (indice > 0 && indice <= quantidade + 1) {
                 int ponteiroFisico = mapeamento(indice);
                 auxr = dados[ponteiroFisico];
             } else {
