@@ -24,6 +24,7 @@ public class listaEstatica implements listavel{
                         y = avancar(y);
 
                     }
+                    retroceder(ponteiroinicio);
                 } else {
                     x = ponteiroFinal;
                     y = avancar(x);
@@ -32,11 +33,12 @@ public class listaEstatica implements listavel{
                         x = retroceder(x);
                         y = retroceder(y);
                     }
+                    avancar(ponteiroFinal);
                 }
-
             } else {
                 System.err.println("Indice invslido");
             }
+            quantidade++;
         } else {
             System.err.println("Indice invalido");
         }
@@ -133,6 +135,9 @@ public class listaEstatica implements listavel{
         } else {
             System.err.println("Lista vazia");
         }
+        return auxr;
+    }
+
         /*if (!estaVazia()){
             if (indice > 0 && indice <= quantidade) {
                 auxr = dados[mapeamento(indice)];
@@ -149,8 +154,7 @@ public class listaEstatica implements listavel{
             }
         }
         return auxr;*/
-        return auxr;
-    }
+    // opção simples do apagar
 
     @Override
     public Object[] limpar() {
