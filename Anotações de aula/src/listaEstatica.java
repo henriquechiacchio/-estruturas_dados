@@ -133,6 +133,22 @@ public class listaEstatica implements listavel{
         } else {
             System.err.println("Lista vazia");
         }
+        /*if (!estaVazia()){
+            if (indice > 0 && indice <= quantidade) {
+                auxr = dados[mapeamento(indice)];
+                int x = mapeamento(indice);
+                int y = avancar(x);
+                for (int i = 0; i < quantidade-indice ; i++){
+                    dados[x] = dados[y];
+                    x = avancar(x);
+                    y = avancar(y);
+
+                }
+                quantidade--;
+                ponteiroFinal = retroceder(ponteiroFinal);
+            }
+        }
+        return auxr;*/
         return auxr;
     }
 
