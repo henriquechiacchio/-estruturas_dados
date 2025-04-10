@@ -18,7 +18,7 @@ public interface listavel {
     boolean contem(Object dado); //S
 
     //Extras
-    //int primeiraOcorrencia(Object Dado); //S
+    int primeiraOcorrencia(Object Dado); //S
 
     //int ultimaOcorrencia(Object Dado); //S
 

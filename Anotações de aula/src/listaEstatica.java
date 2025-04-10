@@ -19,32 +19,43 @@ public class listaEstatica implements listavel {
         if (!estaCheia()) {
             if (indice > 0 && indice <= quantidade + 1) {
                 int x, y;
-                if (mapeamento(indice) < (quantidade / 2)) {
-                    x = ponteiroinicio;
-                    y = retroceder(x);
-                    for (int i = 0; i < indice; i++) {
-                        dados[y] = dados[x];
-                        x = avancar(x);
-                        y = avancar(y);
+                if ((quantidade != 0)) {
+                    if (!(mapeamento(indice) > ponteiroFinal)) {
+                        if (mapeamento(indice) < (quantidade / 2)) {
+                            x = ponteiroinicio;
+                            y = retroceder(x);
+                            for (int i = 0; i < indice; i++) {
+                                dados[y] = dados[x];
+                                x = avancar(x);
+                                y = avancar(y);
 
+                            }
+                            dados[mapeamento(indice)] = dado;
+                            retroceder(ponteiroinicio);
+                        } else {
+                            x = ponteiroFinal;
+                            y = avancar(x);
+                            for (int i = 0; i < indice; i++) {
+                                dados[y] = dados[x];
+                                x = retroceder(x);
+                                y = retroceder(y);
+                            }
+                            dados[mapeamento(indice)] = dado;
+                            avancar(ponteiroFinal);
+                        }
+                    } else {
+                        dados[ponteiroFinal+1] = dado;
                     }
-                    retroceder(ponteiroinicio);
                 } else {
-                    x = ponteiroFinal;
-                    y = avancar(x);
-                    for (int i = 0; i < indice - 1; i++) {
-                        dados[y] = dados[x];
-                        x = retroceder(x);
-                        y = retroceder(y);
-                    }
-                    avancar(ponteiroFinal);
+                    dados[ponteiroinicio] = dado;
                 }
             } else {
                 System.err.println("Indice invslido");
             }
             quantidade++;
+            ponteiroFinal++;
         } else {
-            System.err.println("Indice invalido");
+            System.err.println("A lista esta vazia");
         }
 
     }
@@ -52,7 +63,7 @@ public class listaEstatica implements listavel {
     @Override
     public void anexar(Object dado) {
         if (!estaCheia()) {
-            ponteiroFinal = (ponteiroFinal + 1) % dados.length;
+            avancar(ponteiroFinal);
             quantidade++;
             dados[ponteiroFinal] = dado;
         } else {
@@ -97,8 +108,7 @@ public class listaEstatica implements listavel {
     public void atualizar(Object dado, int indice) {
         if (!estaVazia()) {
             if (0 < indice && indice <= quantidade) {
-                int ponteiroFisico = mapeamento(indice);
-                dados[ponteiroFisico] = dados;
+                dados[mapeamento(indice)] = dado;
             } else {
                 System.err.println("indice invalido");
             }
@@ -117,7 +127,7 @@ public class listaEstatica implements listavel {
                 x = mapeamento(indice);
                 if (mapeamento(indice) < (quantidade / 2)) {
                     y = retroceder(x);
-                    for (int i = 0; i < indice - 1; i++) {
+                    for (int i = 0; i < indice; i++) {
                         dados[x] = dados[y];
                         x = retroceder(x);
                         y = retroceder(y);
@@ -165,11 +175,11 @@ public class listaEstatica implements listavel {
         Object[] auxr = null;
         if (!(quantidade == 0)) {
             auxr = new Object[quantidade];
-            int p1, p2;
+            int posicaoLista, posicaoNova;
             for (int indice = ponteiroinicio; indice < ponteiroinicio + quantidade; indice++) {
-                p1 = indice % dados.length;
-                p2 = indice - ponteiroinicio;
-                auxr[p2] = dados[p1];
+                posicaoLista = indice % dados.length;
+                posicaoNova = indice - ponteiroinicio;
+                auxr[posicaoNova] = dados[posicaoLista];
             }
             quantidade = 0;
             ponteiroinicio = 0;
@@ -246,9 +256,7 @@ public class listaEstatica implements listavel {
                 aux += dados[i % dados.length];
             } else {
                 aux += dados[i % dados.length] + ", ";
-
             }
-
         }
         return aux + "]";
     }
