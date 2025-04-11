@@ -44,7 +44,7 @@ public class listaEstatica implements listavel {
                             avancar(ponteiroFinal);
                         }
                     } else {
-                        dados[ponteiroFinal+1] = dado;
+                        dados[ponteiroFinal + 1] = dado;
                     }
                 } else {
                     dados[ponteiroinicio] = dado;
