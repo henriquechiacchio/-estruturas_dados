@@ -1,5 +1,5 @@
 package Pilha;
-import Fila.*;
+import Fila.enfileiravel;
 
 public class FilaComPilhas implements enfileiravel{
 

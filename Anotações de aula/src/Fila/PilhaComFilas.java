@@ -1,4 +1,5 @@
 package Fila;
+import Pilha.empilhavel;
 
 public class PilhaComFilas implements empilhavel{
     private enfileiravel p1;
