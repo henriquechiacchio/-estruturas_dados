@@ -1,4 +1,4 @@
-//Fila não utilizavel, acaba ao percorrer o array todo
+package Fila;//Fila não utilizavel, acaba ao percorrer o array todo
 
 public class filaEstatica implements enfileiravel{
 

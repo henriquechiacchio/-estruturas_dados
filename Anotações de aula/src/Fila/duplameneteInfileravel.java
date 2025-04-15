@@ -1,3 +1,5 @@
+package Fila;
+
 public interface duplameneteInfileravel {
         //NOVO
         void enfileirarInicio(Object dado);

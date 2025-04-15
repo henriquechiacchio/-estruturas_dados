@@ -1,3 +1,5 @@
+package Lista;
+
 //Toda fila e pilha são listas
 public interface listavel {
 

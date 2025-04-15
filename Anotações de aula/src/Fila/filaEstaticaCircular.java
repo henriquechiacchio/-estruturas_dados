@@ -1,3 +1,5 @@
+package Fila;
+
 public class filaEstaticaCircular implements enfileiravel{
 
     private Object dados[];

@@ -1,3 +1,5 @@
+package Lista;
+
 import java.util.Arrays;
 
 public class listaUtil {
@@ -27,10 +29,10 @@ public class listaUtil {
         System.out.println("Atualizar: " + l1.imprimir());
 
         l1.apagar(1);
-        System.out.println(l1.imprimir());
+        System.out.println("Apagar: " + l1.imprimir());
 
         l1.apagar(5);
-        System.out.println(l1.imprimir());
+        System.out.println("Apagar: " + l1.imprimir());
 
         l1.primeiraOcorrencia(2);
 

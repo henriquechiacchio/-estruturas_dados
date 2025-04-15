@@ -1,3 +1,5 @@
+package Lista;
+
 public class listaEstatica implements listavel {
 
     private Object[] dados;

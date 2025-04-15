@@ -1,3 +1,5 @@
+package Fila;
+
 public class filaEstaticaDuplaTerminacao implements duplameneteInfileravel{
     @Override
     public void enfileirarInicio(Object dado) {

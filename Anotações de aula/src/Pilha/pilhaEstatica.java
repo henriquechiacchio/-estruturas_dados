@@ -1,3 +1,5 @@
+package Pilha;
+
 public class pilhaEstatica implements empilhavel{
     //variaveis de instacia
     private Object[] dados;

@@ -1,3 +1,6 @@
+package Pilha;
+import Fila.*;
+
 public class FilaComPilhas implements enfileiravel{
 
     private empilhavel p1;

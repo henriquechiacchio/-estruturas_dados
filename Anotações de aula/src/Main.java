@@ -1,3 +1,4 @@
+
 public class Main {
     public static void main(String[] args) {
 
@@ -20,7 +21,7 @@ public class Main {
         System.out.println("Pilha: " + p.imprimir());*/
         //Aula 2
 
-        enfileiravel f = new filaEstaticaCircular();
+        /*enfileiravel f = new filaEstaticaCircular();
         f.enfileirar(1);
         f.enfileirar(2);
         f.enfileirar(3);
@@ -31,8 +32,8 @@ public class Main {
         f.enfileirar(8);
         f.enfileirar(9);
         f.enfileirar(10);
-        System.out.println(f.imprimir());
-        //Colocar teste do git
+        System.out.println(f.imprimir());*/
+
 
     }
 }

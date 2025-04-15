@@ -1,3 +1,5 @@
+package Pilha;
+
 public interface empilhavel {
     Object espiar();
     Object desempilhar();
