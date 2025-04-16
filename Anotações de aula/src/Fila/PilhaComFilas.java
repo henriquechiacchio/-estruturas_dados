@@ -1,15 +1,16 @@
 package Fila;
+
 import Pilha.empilhavel;
 
-public class PilhaComFilas implements empilhavel{
+public class PilhaComFilas implements empilhavel {
     private enfileiravel p1;
     private enfileiravel aux;
 
-    public PilhaComFilas(){
+    public PilhaComFilas() {
         this(10);
     }
 
-    public PilhaComFilas(int tamanho){
+    public PilhaComFilas(int tamanho) {
         p1 = new filaEstaticaCircular(tamanho);
         aux = new filaEstaticaCircular(tamanho);
     }
@@ -17,25 +18,24 @@ public class PilhaComFilas implements empilhavel{
     @Override
     public Object espiar() {
 
-       Object auxr = null;
-       if (!p1.estaVazia()){
-           auxr = p1.frente();
-       }
-       else {
-           System.err.println("A pila está vazia");
-       }
+        Object auxr = null;
+        if (!p1.estaVazia()) {
+            auxr = p1.frente();
+        } else {
+            System.err.println("A pila está vazia");
+        }
         return auxr;
 
     }
 
     @Override
     public void empilhar(Object dado) {
-        if (!p1.estaCheia()){
+        if (!p1.estaCheia()) {
             while (!p1.estaVazia()) {
                 aux.enfileirar(p1.desenfileirar());
             }
             p1.enfileirar(dado);
-            while (!aux.estaVazia()){
+            while (!aux.estaVazia()) {
                 p1.enfileirar(aux.desenfileirar());
             }
         } else {
@@ -46,10 +46,9 @@ public class PilhaComFilas implements empilhavel{
     @Override
     public Object desempilhar() {
         Object auxr = null;
-        if (!p1.estaVazia()){
-            auxr=p1.desenfileirar();
-        }
-        else{
+        if (!p1.estaVazia()) {
+            auxr = p1.desenfileirar();
+        } else {
             System.err.println("A pilah está vazia");
         }
         return auxr;
@@ -72,6 +71,8 @@ public class PilhaComFilas implements empilhavel{
     }
 
     @Override
-    public String imprimir() { return p1.imprimir(); }
+    public String imprimir() {
+        return p1.imprimir();
+    }
 
 }

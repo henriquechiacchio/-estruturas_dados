@@ -29,7 +29,7 @@ public class selectionSort {
         System.out.println(" ");
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         selectionSort sort = new selectionSort();
         System.out.println("Antes: ");
         sort.imprimiTela();

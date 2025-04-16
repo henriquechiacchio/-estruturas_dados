@@ -28,7 +28,6 @@ public class bubbleSort {
     }
 
     public static void main(String[] args) {
-
         bubbleSort sort = new bubbleSort();
         System.out.println("Antes: ");
         sort.imprimiTela();

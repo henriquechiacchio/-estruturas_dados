@@ -1,6 +1,6 @@
 package Fila;
 
-public class filaEstaticaDuplaTerminacao implements duplameneteInfileravel{
+public class filaEstaticaDuplaTerminacao implements duplameneteInfileravel {
     private int ponteiroInicio;
     private int ponteiroFim;
     private Object[] dados;
@@ -19,7 +19,7 @@ public class filaEstaticaDuplaTerminacao implements duplameneteInfileravel{
 
     @Override
     public void enfileirarFim(Object dado) {
-        if (!estaCheia()){
+        if (!estaCheia()) {
             ponteiroFim = avancar(ponteiroFim);
             dados[ponteiroFim] = dado;
             quantidade++;
@@ -31,7 +31,7 @@ public class filaEstaticaDuplaTerminacao implements duplameneteInfileravel{
     @Override
     public Object desenfileirarInicio() {
         Object dadoInicio = null;
-        if (!estaVazia()){
+        if (!estaVazia()) {
             dadoInicio = dados[ponteiroInicio];
             ponteiroInicio = avancar(ponteiroInicio);
             quantidade--;
@@ -54,7 +54,7 @@ public class filaEstaticaDuplaTerminacao implements duplameneteInfileravel{
 
     @Override
     public void enfileirarInicio(Object dado) {
-        if (!estaCheia()){
+        if (!estaCheia()) {
             ponteiroInicio = retroceder(ponteiroInicio);
             dados[ponteiroInicio] = dado;
             quantidade++;
@@ -66,7 +66,7 @@ public class filaEstaticaDuplaTerminacao implements duplameneteInfileravel{
     @Override
     public Object desenfileirarFim() {
         Object dadoFim = null;
-        if (!estaVazia()){
+        if (!estaVazia()) {
             dadoFim = dados[ponteiroFim];
             ponteiroFim = retroceder(ponteiroFim);
             quantidade--;
@@ -89,7 +89,7 @@ public class filaEstaticaDuplaTerminacao implements duplameneteInfileravel{
 
     @Override
     public void atualizarInicio(Object dado) {
-        if (!estaVazia()){
+        if (!estaVazia()) {
             dados[ponteiroInicio] = dado;
         } else {
             System.err.println("Queue is empty!");
@@ -98,7 +98,7 @@ public class filaEstaticaDuplaTerminacao implements duplameneteInfileravel{
 
     @Override
     public void atualizarFim(Object dado) {
-        if (!estaVazia()){
+        if (!estaVazia()) {
             dados[ponteiroFim] = dado;
         } else {
             System.err.println("Queue is empty!");
@@ -144,10 +144,10 @@ public class filaEstaticaDuplaTerminacao implements duplameneteInfileravel{
     }
 
     private int avancar(int ponteiro) {
-        return (ponteiro+1)%dados.length;
+        return (ponteiro + 1) % dados.length;
     }
 
     private int retroceder(int ponteiro) {
-        return ((ponteiro-1)+dados.length)%dados.length;
+        return ((ponteiro - 1) + dados.length) % dados.length;
     }
 }

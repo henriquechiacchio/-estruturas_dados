@@ -34,5 +34,4 @@ public interface listavel {
     //Listas são contiguas, não tem buraco
 
 
-
 }

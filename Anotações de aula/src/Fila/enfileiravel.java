@@ -7,16 +7,21 @@ package Fila;
 
 public interface enfileiravel {
 
-    void enfileirar (Object Dado);
+    void enfileirar(Object Dado);
+
     Object frente();
+
     void atualizarInicio(Object dado);
+
     void atualizarFim(Object Dado);
+
     Object desenfileirar();
 
     boolean estaCheia();
-    boolean estaVazia();
-    String imprimir();
 
+    boolean estaVazia();
+
+    String imprimir();
 
 
 }

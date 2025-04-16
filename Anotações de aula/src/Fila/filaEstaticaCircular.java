@@ -1,14 +1,15 @@
 package Fila;
 
-public class filaEstaticaCircular implements enfileiravel{
+public class filaEstaticaCircular implements enfileiravel {
 
     private Object dados[];
     private int ponteiroInicio, ponteiroFim, quant;
 
-    public filaEstaticaCircular(){
+    public filaEstaticaCircular() {
         this(10);
     }
-    public filaEstaticaCircular(int tamanho){
+
+    public filaEstaticaCircular(int tamanho) {
         dados = new Object[tamanho];
         ponteiroInicio = 0;
         ponteiroFim = -1;
@@ -17,10 +18,10 @@ public class filaEstaticaCircular implements enfileiravel{
 
     @Override
     public void enfileirar(Object Dado) {
-        if (!estaCheia()){
-            ponteiroFim = (ponteiroFim + 1)%dados.length;
+        if (!estaCheia()) {
+            ponteiroFim = (ponteiroFim + 1) % dados.length;
             quant++;
-            dados[ponteiroFim]=Dado;
+            dados[ponteiroFim] = Dado;
         } else {
             System.err.println("A fila esta cheia");
         }
@@ -30,19 +31,21 @@ public class filaEstaticaCircular implements enfileiravel{
     @Override
     public Object desenfileirar() {
         Object aux = null;
-        if (!estaVazia()){
-            aux=dados[ponteiroInicio];
-            ponteiroInicio=(ponteiroInicio+1)% dados.length;
+        if (!estaVazia()) {
+            aux = dados[ponteiroInicio];
+            ponteiroInicio = (ponteiroInicio + 1) % dados.length;
             quant--;
-        } else {System.err.println("A fila esta vazia");}
+        } else {
+            System.err.println("A fila esta vazia");
+        }
         return aux;
     }
 
     @Override
     public Object frente() {
         Object aux = null;
-        if (!estaVazia()){
-            aux=dados[ponteiroInicio];
+        if (!estaVazia()) {
+            aux = dados[ponteiroInicio];
         } else {
             System.err.println("A fila esta vazia");
         }
@@ -51,8 +54,8 @@ public class filaEstaticaCircular implements enfileiravel{
 
     @Override
     public void atualizarInicio(Object dado) {
-        if (!estaVazia()){
-            dados[ponteiroInicio]=dado;
+        if (!estaVazia()) {
+            dados[ponteiroInicio] = dado;
         } else {
             System.err.println("A fila esta vazia");
         }
@@ -62,7 +65,7 @@ public class filaEstaticaCircular implements enfileiravel{
     @Override
     public void atualizarFim(Object Dado) {
         if (!estaVazia()) {
-            dados[ponteiroFim]=Dado;
+            dados[ponteiroFim] = Dado;
         } else {
             System.err.println("A fila esta vazia");
         }
@@ -71,12 +74,12 @@ public class filaEstaticaCircular implements enfileiravel{
 
     @Override
     public boolean estaCheia() {
-        return (quant== dados.length);
+        return (quant == dados.length);
     }
 
     @Override
     public boolean estaVazia() {
-        return (quant==0);
+        return (quant == 0);
     }
 
     @Override
@@ -96,13 +99,13 @@ public class filaEstaticaCircular implements enfileiravel{
             //Opção 1
 
             if (i == quant + ponteiroInicio - 1) {
-                aux += dados[i%dados.length];
+                aux += dados[i % dados.length];
             } else {
-                aux += dados[i% dados.length] + ", ";
+                aux += dados[i % dados.length] + ", ";
 
             }
 
-            }
+        }
         return aux + "]";
     }
 }

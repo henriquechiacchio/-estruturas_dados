@@ -82,11 +82,11 @@ public class pilhaEstaticaInvertida implements empilhavel {
     @Override
     public String imprimir() {
         String aux = "[";
-        for (int i=ponteiroTopo; i <= 0; i++){
-            if (i == ponteiroTopo){
+        for (int i = ponteiroTopo; i <= 0; i++) {
+            if (i == ponteiroTopo) {
                 aux += dados[i];
             } else {
-                aux +=dados[i] + ",";
+                aux += dados[i] + ",";
             }
         }
         return aux + "]";

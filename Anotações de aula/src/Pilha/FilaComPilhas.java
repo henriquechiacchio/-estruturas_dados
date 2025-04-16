@@ -1,23 +1,24 @@
 package Pilha;
+
 import Fila.enfileiravel;
 
-public class FilaComPilhas implements enfileiravel{
+public class FilaComPilhas implements enfileiravel {
 
     private empilhavel p1;
     private empilhavel p2;
 
-    public FilaComPilhas(){
+    public FilaComPilhas() {
         this(10);
     }
 
-    public FilaComPilhas(int tamanho){
-    p1 = new pilhaEstatica(tamanho);
-    p2 = new pilhaEstatica(tamanho);
+    public FilaComPilhas(int tamanho) {
+        p1 = new pilhaEstatica(tamanho);
+        p2 = new pilhaEstatica(tamanho);
     }
 
     @Override
     public void enfileirar(Object Dado) {
-      p1.empilhar(Dado);
+        p1.empilhar(Dado);
     }
 
     @Override
@@ -35,7 +36,7 @@ public class FilaComPilhas implements enfileiravel{
             aux = null;
             System.err.println("A fila esta vazia");
         }
-            return aux;
+        return aux;
     }
 
     @Override
@@ -91,11 +92,11 @@ public class FilaComPilhas implements enfileiravel{
     @Override
     public String imprimir() {
         String aux;
-        while (!p1.estaVazia()){
+        while (!p1.estaVazia()) {
             p2.empilhar(p1.desempilhar());
         }
         aux = p2.imprimir();
-        while (!p2.estaVazia()){
+        while (!p2.estaVazia()) {
             p1.empilhar(p2.desempilhar());
         }
 
