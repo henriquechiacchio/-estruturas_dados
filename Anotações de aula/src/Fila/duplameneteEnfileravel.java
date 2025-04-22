@@ -1,6 +1,6 @@
 package Fila;
 
-public interface duplameneteInfileravel {
+public interface duplameneteEnfileravel {
     //NOVO
     void enfileirarInicio(Object dado);
 

@@ -22,13 +22,13 @@ public class pilhaEstaticaInvertida implements empilhavel {
 
     @Override
     public Object espiar() {
-        Object aux = null;
+        Object auxr = null;
         if (!estaVazia()) {
-            aux = dados[ponteiroTopo];
+            auxr = dados[ponteiroTopo];
         } else {
             System.err.println("Stack is empty");
         }
-        return aux;
+        return auxr;
     }
 
 
@@ -44,14 +44,14 @@ public class pilhaEstaticaInvertida implements empilhavel {
 
     @Override
     public Object desempilhar() {
-        Object aux = null;
+        Object auxr = null;
         if (!estaVazia()) {
-            aux = dados[ponteiroTopo];
+            auxr = dados[ponteiroTopo];
             ponteiroTopo++;
         } else {
             System.err.println("Stack is empty");
         }
-        return aux;
+        return auxr;
         //Desnecessario apagar o dado, pois quando atribuir ele sera descatardo
     }
 
@@ -82,11 +82,11 @@ public class pilhaEstaticaInvertida implements empilhavel {
     @Override
     public String imprimir() {
         String aux = "[";
-        for (int i = ponteiroTopo; i <= 0; i++) {
-            if (i == ponteiroTopo) {
+        for (int i = ponteiroTopo; i < dados.length; i++) {
+            if (i == dados.length - 1) {
                 aux += dados[i];
             } else {
-                aux += dados[i] + ",";
+                aux += dados[i] + ", ";
             }
         }
         return aux + "]";

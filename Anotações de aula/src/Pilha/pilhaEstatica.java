@@ -22,13 +22,13 @@ public class pilhaEstatica implements empilhavel {
 
     @Override
     public Object espiar() {
-        Object aux = null;
+        Object auxr = null;
         if (!estaVazia()) {
-            aux = dados[ponteiroTopo];
+            auxr = dados[ponteiroTopo];
         } else {
             System.err.println("Stack is empty");
         }
-        return aux;
+        return auxr;
     }
 
 
@@ -44,14 +44,14 @@ public class pilhaEstatica implements empilhavel {
 
     @Override
     public Object desempilhar() {
-        Object aux = null;
+        Object auxr = null;
         if (!estaVazia()) {
-            aux = dados[ponteiroTopo];
+            auxr = dados[ponteiroTopo];
             ponteiroTopo--;
         } else {
             System.err.println("Stack is empty");
         }
-        return aux;
+        return auxr;
         //Desnecessario apagar o dado, pois quando atribuir ele sera descatardo
     }
 
@@ -81,10 +81,14 @@ public class pilhaEstatica implements empilhavel {
 
     @Override
     public String imprimir() {
-        String aux = "[";
+        String auxr = "[";
         for (int i = ponteiroTopo; i >= 0; i--) {
-            aux += dados[i];
+            if (i == 0){
+                auxr += dados[i];
+            } else {
+                auxr += dados[i] + ", ";
+            }
         }
-        return aux + "]";
+        return auxr + "]";
     }
 }

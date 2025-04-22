@@ -1,6 +1,6 @@
 package Fila;
 
-public class filaEstaticaDuplaTerminacao implements duplameneteInfileravel {
+public class filaEstaticaDuplaTerminacao implements duplameneteEnfileravel {
     private int ponteiroInicio;
     private int ponteiroFim;
     private Object[] dados;

@@ -44,7 +44,6 @@ public class listaUtil {
 
         Object[] l2;
         l2 = l1.selecionarTodos();
-        listavel l3 = new listaEstatica();
         System.out.println("Selecionar Todos: " + Arrays.toString(l2));
 
         l1.limpar();
