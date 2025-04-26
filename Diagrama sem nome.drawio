@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36 OPR/117.0.0.0" version="26.2.14">
   <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
-    <mxGraphModel dx="955" dy="528" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1154" dy="638" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -200,7 +200,7 @@
         </mxCell>
         <mxCell id="brVLwmycuiolt7G4G05W-33" value="participante" style="endArrow=none;dashed=1;html=1;rounded=0;endFill=1;startArrow=classic;startFill=0;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="630.3103448275863" y="350" as="sourcePoint" />
+            <mxPoint x="800" y="350" as="sourcePoint" />
             <mxPoint x="990.0000000000002" y="350" as="targetPoint" />
           </mxGeometry>
         </mxCell>
@@ -211,6 +211,20 @@
             <Array as="points">
               <mxPoint x="540" y="350" />
             </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sEcu1uPW9zgkRu7G9N79-1" value="inscreverParticipante(participante)" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" target="brVLwmycuiolt7G4G05W-1">
+          <mxGeometry x="-0.1768" y="-10" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="800" y="350" as="sourcePoint" />
+            <mxPoint x="690" y="260" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sEcu1uPW9zgkRu7G9N79-4" value="&lt;br&gt;&lt;span style=&quot;font-size: 12px; text-align: left; text-wrap-mode: wrap; background-color: rgb(27, 29, 30);&quot;&gt;notificarParticipantes&lt;/span&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" target="brVLwmycuiolt7G4G05W-3">
+          <mxGeometry x="0.0028" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="270" y="400" as="sourcePoint" />
+            <mxPoint x="360" y="400" as="targetPoint" />
+            <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
       </root>
