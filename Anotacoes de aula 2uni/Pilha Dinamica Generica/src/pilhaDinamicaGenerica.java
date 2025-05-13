@@ -45,7 +45,7 @@ public class pilhaDinamicaGenerica<T> implements empilhavelGenerica<T> {
     @Override
     public void empilhar(T dado) {
         if (estaCheia()) {
-            throw new NoSuchElementException("Pilha cheia");
+            throw new NoSuchElementException("Pilha cheia!");
         }
         nodoDuplo<T> aux = new nodoDuplo<>();
         aux.setDado(dado);
@@ -151,7 +151,7 @@ public class pilhaDinamicaGenerica<T> implements empilhavelGenerica<T> {
     @Override
     public void atualizar(T dado) {
         if (estaVazia()) {
-            throw new NoSuchElementException("Pilha Vazia!");
+            throw new NoSuchElementException("Pilha vazia!");
         }
         ponteiroTopo.setDado(dado);
 

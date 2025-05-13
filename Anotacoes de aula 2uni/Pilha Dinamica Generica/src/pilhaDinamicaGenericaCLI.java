@@ -29,7 +29,6 @@ public class pilhaDinamicaGenericaCLI {
                 controle = sc.nextInt();
                 sc.nextLine(); //retira o newspace
 
-
                 switch (controle) {
                     case 0:
                         System.out.println("Encerrando Main");
@@ -42,7 +41,7 @@ public class pilhaDinamicaGenericaCLI {
                         try {
                             p1.empilhar(auxr);
                         } catch (NoSuchElementException e) {
-                            System.err.println("Pilha cheia! tente novamente");
+                            System.err.println(e.getMessage());
                         }
                         break;
 
@@ -51,7 +50,7 @@ public class pilhaDinamicaGenericaCLI {
                             auxr = p1.desempilhar();
                             System.out.println("Dado desempilhado: " + auxr);
                         } catch (NoSuchElementException e) {
-                            System.err.println("Pilha vazia! tente novamente");
+                            System.err.println(e.getMessage());
                         }
                         break;
 
@@ -60,7 +59,7 @@ public class pilhaDinamicaGenericaCLI {
                             auxr = p1.espiar();
                             System.out.println("Dado espiado: " + auxr);
                         } catch (NoSuchElementException e) {
-                            System.err.println("pilha vazia! tente novamente");
+                            System.err.println(e.getMessage());
                         }
                         break;
 
@@ -70,7 +69,7 @@ public class pilhaDinamicaGenericaCLI {
                         try {
                             p1.atualizar(auxr);
                         } catch (NoSuchElementException e) {
-                            System.err.println("Pilha vazia, tente novamente");
+                            System.err.println(e.getMessage());
                         }
                         break;
 
