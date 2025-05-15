@@ -37,6 +37,11 @@ public class dequeDinamicaGenerica<T>
         this.ponteiroInicio = null;
     }
 
+    /**
+     * Metodo que enfileira no inicio um dado T
+     *
+     * @param dado, dado enfileirado
+     */
     @Override
     public void enfileirarInicio(T dado) {
         if (estaCheio()) {
@@ -53,6 +58,12 @@ public class dequeDinamicaGenerica<T>
         ponteiroInicio = novoNodo;
         quantidade++;
     }
+
+    /**
+     * Metodo que enfileira no fim um dado T
+     *
+     * @param dado, dado enfileirado
+     */
 
     @Override
     public void enfileirarFim(T dado) {
@@ -73,6 +84,12 @@ public class dequeDinamicaGenerica<T>
 
     }
 
+
+    /**
+     * Metodo que retira um dado da fila, no inicio
+     *
+     * @return T, dado generico retirado da fila
+     */
     @Override
     public T desinfileirarinicio() {
         if (estaVazia()) {
@@ -89,6 +106,12 @@ public class dequeDinamicaGenerica<T>
 
         return aux;
     }
+
+    /**
+     * Metodo que retira um dado da fila, no fim
+     *
+     * @return T, dado generico retirado da fila
+     */
 
     @Override
     public T desinfileirarFim() {
@@ -107,6 +130,12 @@ public class dequeDinamicaGenerica<T>
         return aux;
     }
 
+    /**
+     * Metodo que retorna o dado no inicio da fila, sem o retirar
+     *
+     * @return T, dado generico espiado
+     */
+
     @Override
     public T espiarinicio() {
         if (!(estaVazia())) {
@@ -114,6 +143,12 @@ public class dequeDinamicaGenerica<T>
         }
         throw new NoSuchElementException("FILA VAZIA");
     }
+
+    /**
+     * Metodo que retorna o dado no inicio da fila, sem o retirar
+     *
+     * @return T, dado generico espiado
+     */
 
     @Override
     public T espiarFim() {
@@ -123,16 +158,31 @@ public class dequeDinamicaGenerica<T>
         throw new NoSuchElementException("FILA VAZIA");
     }
 
+    /**
+     * Metodo que verifica se a fila está cheia
+     *
+     * @return boolean, true se cheia, false do contrario
+     */
     @Override
     public boolean estaCheio() {
         return quantidade == tamanho;
     }
 
+    /**
+     * Metodo que verifica se a fila está vazia
+     *
+     * @return boolean, true se vazia, false do contrario
+     */
     @Override
     public boolean estaVazia() {
         return quantidade == 0;
     }
 
+    /**
+     * Metodo que atualiza o dado no inicio da fila
+     *
+     * @param dado, dado a ser inserido
+     */
     @Override
     public void atualizarInicio(T dado) {
         if (estaVazia()) {
@@ -142,6 +192,12 @@ public class dequeDinamicaGenerica<T>
 
     }
 
+    /**
+     * Metodo que atualiza o dado no fim da fila
+     *
+     * @param dado, dado a ser inserido
+     */
+
     @Override
     public void atualizarFim(T dado) {
         if (estaVazia()) {
@@ -150,6 +206,11 @@ public class dequeDinamicaGenerica<T>
         ponteiroInicio.setDado(dado);
     }
 
+    /**
+     * Metodo que retorna um texto com todos os dados da fila do Inicio ao fim
+     *
+     * @return String, String que contem o texto
+     */
     @Override
     public String imprimirInicioFim() {
         String auxr = "[ ";
@@ -164,6 +225,12 @@ public class dequeDinamicaGenerica<T>
         }
         return auxr += "] ";
     }
+
+    /**
+     * Metodo que retorna um texto com todos os dados da fila do fim ao inicio
+     *
+     * @return String, String que contem o texto
+     */
 
     @Override
     public String imprimirFimInicio() {
@@ -180,11 +247,21 @@ public class dequeDinamicaGenerica<T>
         return auxr += "] ";
     }
 
+    /**
+     * Getter do tamanho maximo da fila
+     *
+     * @return int, tamanho maximo
+     */
     @Override
     public int getTamanho() {
         return tamanho;
     }
 
+    /**
+     * Getter da quantidade atual da fila
+     *
+     * @return int, quantidade atual
+     */
     @Override
     public int getQuantidade() {
         return quantidade;

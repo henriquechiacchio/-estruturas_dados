@@ -1,4 +1,11 @@
-import java.sql.SQLOutput;
+/**
+ * Classe main para exibiçãod o menu em CLi da Deque Dinamica Generica
+ *
+ * @author Chiacchio H, R, B
+ * @version 1.0
+ * @since 2025 05 12
+ */
+
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
