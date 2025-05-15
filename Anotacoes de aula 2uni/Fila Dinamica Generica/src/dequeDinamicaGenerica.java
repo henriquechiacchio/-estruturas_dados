@@ -42,13 +42,14 @@ public class dequeDinamicaGenerica<T>
         if (estaCheio()) {
             throw new NoSuchElementException("FILA CHEIA");
         }
-        nodoDuplo<T> novoNodo = new nodoDuplo<>(dado);
-        novoNodo.setProximo(ponteiroInicio);
+        nodoDuplo<T> novoNodo = new nodoDuplo<>();
+        novoNodo.setDado(dado);
         if (!(estaVazia())) {
             ponteiroInicio.setAnterior(novoNodo);
         } else {
             ponteiroFim = novoNodo;
         }
+        novoNodo.setProximo(ponteiroInicio);
         ponteiroInicio = novoNodo;
         quantidade++;
     }
@@ -59,13 +60,14 @@ public class dequeDinamicaGenerica<T>
             throw new NoSuchElementException("FILA CHEIA");
         }
 
-        nodoDuplo<T> novoNodo = new nodoDuplo<>(dado);
-        novoNodo.setAnterior(ponteiroFim);
+        nodoDuplo<T> novoNodo = new nodoDuplo<>();
+        novoNodo.setDado(dado);
         if (!(estaVazia())) {
             ponteiroFim.setProximo(novoNodo);
         } else {
             ponteiroInicio = novoNodo;
         }
+        novoNodo.setAnterior(ponteiroFim);
         ponteiroFim = novoNodo;
         quantidade++;
 
@@ -76,11 +78,14 @@ public class dequeDinamicaGenerica<T>
         if (estaVazia()) {
             throw new NoSuchElementException("FILA VAZIA");
         }
-        T aux;
-        aux = ponteiroInicio.getDado();
+        T aux = ponteiroInicio.getDado();
         ponteiroInicio = ponteiroInicio.getProximo();
-        ponteiroInicio.setAnterior(null);
         quantidade--;
+        if (!estaVazia()) {
+            ponteiroInicio.setAnterior(null);
+        } else {
+            ponteiroFim = null;
+        }
 
         return aux;
     }
@@ -90,11 +95,14 @@ public class dequeDinamicaGenerica<T>
         if (estaVazia()) {
             throw new NoSuchElementException("FILA VAZIA");
         }
-        T aux;
-        aux = ponteiroFim.getDado();
+        T aux = ponteiroFim.getDado();
         ponteiroFim = ponteiroFim.getAnterior();
-        ponteiroFim.setProximo(null);
         quantidade--;
+        if (!estaVazia()) {
+            ponteiroFim.setProximo(null);
+        } else {
+            ponteiroInicio = null;
+        }
 
         return aux;
     }
@@ -170,6 +178,16 @@ public class dequeDinamicaGenerica<T>
             aux = aux.getAnterior();
         }
         return auxr += "] ";
+    }
+
+    @Override
+    public int getTamanho() {
+        return tamanho;
+    }
+
+    @Override
+    public int getQuantidade() {
+        return quantidade;
     }
 
 }

@@ -1,3 +1,4 @@
+
 /**
  * Classe base para estrutura de dados para classe dinamicas
  *
@@ -12,10 +13,10 @@ public class nodoDuplo<T> {
     private T dado;
     private nodoDuplo<T> proximo;
 
-    public nodoDuplo(T dado){
-        this.dado = dado;
-        anterior = null;
-        proximo = null;
+    public nodoDuplo() {
+        this.dado = null;
+        this.anterior = null;
+        this.proximo = null;
     }
 
     /**
@@ -64,6 +65,7 @@ public class nodoDuplo<T> {
      *
      * @param proximo, ponteiro do dado que será alocado
      */
+
     public void setProximo(nodoDuplo<T> proximo) {
         this.proximo = proximo;
     }

@@ -46,13 +46,14 @@ public class filaDinamicaGenerica<T>
             throw new NoSuchElementException("FILA CHEIA");
         }
 
-        nodoDuplo<T> novoNodo = new nodoDuplo<>(dado);
-        novoNodo.setAnterior(ponteiroFim);
+        nodoDuplo<T> novoNodo = new nodoDuplo<>();
+        novoNodo.setDado(dado);
         if (!(estaVazia())) {
             ponteiroFim.setProximo(novoNodo);
         } else {
             ponteiroInicio = novoNodo;
         }
+        novoNodo.setAnterior(ponteiroFim);
         ponteiroFim = novoNodo;
         quantidade++;
 
@@ -63,13 +64,16 @@ public class filaDinamicaGenerica<T>
         if (estaVazia()) {
             throw new NoSuchElementException("FILA VAZIA");
         }
-        nodoDuplo<T> aux;
-        aux = ponteiroInicio;
+        T aux = ponteiroInicio.getDado();
         ponteiroInicio = ponteiroInicio.getProximo();
-        ponteiroInicio.setAnterior(null);
         quantidade--;
+        if (!estaVazia()) {
+            ponteiroInicio.setAnterior(null);
+        } else {
+            ponteiroFim = null;
+        }
 
-        return aux.getDado();
+        return aux;
     }
 
     @Override
@@ -117,12 +121,12 @@ public class filaDinamicaGenerica<T>
         if (estaVazia()) {
             throw new NoSuchElementException("FILA VAZIA");
         }
-        ponteiroInicio.setDado(dado);
+        ponteiroFim.setDado(dado);
     }
 
     @Override
     public String imprimirInicioFim() {
-        String auxr = "[ ";
+        String auxr = "[";
         nodoDuplo<T> aux = ponteiroInicio;
         for (int i = 0; i < quantidade; i++) {
             auxr += aux.getDado();
@@ -132,12 +136,22 @@ public class filaDinamicaGenerica<T>
 
             aux = aux.getProximo();
         }
-        return auxr += "] ";
+        return auxr += "]";
     }
 
     @Override
     public String imprimirFimInicio() throws UnsupportedOperationException {
         throw new UnsupportedOperationException("OPERAÇÃO NÂO SUPORTADA");
+    }
+
+    @Override
+    public int getQuantidade() {
+        return this.quantidade;
+    }
+
+    @Override
+    public int getTamanho() {
+        return this.tamanho;
     }
 
 }

@@ -95,5 +95,19 @@ public interface DuplamenteEnfileiravelGenerico<T> {
      */
     String imprimirFimInicio();
 
+    /**
+     * Getter do tamanho maximo da fila
+     *
+     * @return int, tamanho maximo
+     */
+    int getTamanho();
+
+    /**
+     * Getter da quantidade atual da fila
+     *
+     * @return int, quantidade atual
+     */
+    int getQuantidade();
+
 
 }
